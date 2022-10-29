@@ -66,9 +66,9 @@ export const authOptions = {
     },
 
     async session({ session, token }) {
-      session.user = token.user;
-      session.accessToken = token.accessToken;
-      // session.user.username = token.username;
+      session.user.accessToken = token.accessToken;
+      session.user.refreshToken = token.refreshToken;
+      session.user.username = token.username;
 
       return session;
     },
